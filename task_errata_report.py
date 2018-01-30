@@ -69,7 +69,7 @@ def task_report():
 def job_report():
     # Print headline
     print "Job_id;Hostname;Status;Date;Type;User;Errata"
-    jobs = get_with_json(job_api + '?search=Katello', json.dumps({"per_page": "10000000"}))["results"]
+    jobs = get_with_json(job_api + '?search=job_category=Katello', json.dumps({"per_page": "10000000"}))["results"]
 　
     for job in jobs:
         job_id = job["id"]
